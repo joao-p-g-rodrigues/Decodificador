@@ -1,9 +1,25 @@
+:root {
+    --cor-primaria: #0A3871;
+    --cor-secundaria: #D8DFE8;
+    --cor-fundo: #E5E5E5;
+    --cor-texto: #0A3871;
+    --cor-botao: #ffffff;
+
+    --fonte-principal: "Inter", sans-serif;
+
+    --tamanho-fonte: 32px;
+    --altura-linha: 150%;
+}
+
 * {
-    background: #E5E5E5;
-    font-family: "Inter", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: var(--cor-fundo);
+    font-family: var(--fonte-principal);
     font-weight: 400;
-    font-size: 32px;
-    line-height: 150%;
+    font-size: var(--tamanho-fonte);
+    line-height: var(--altura-linha);
 }
 
 .logoAlura {
@@ -20,42 +36,36 @@ main {
 
 .text-area {
     border: none;
-    color: #0A3871;
+    color: var(--cor-texto);
     margin-top: 90px;
     text-transform: lowercase;
 }
 
 ::placeholder {
-    color: #0A3871;
+    color: var(--cor-texto);
 }
 
 .text-area:focus {
     outline: none;
 }
 
-/* .mensagem {
-    background: white;
-    background-image: url(/img/boneco.png);
-    background-repeat: no-repeat;
-    border: none;
-    border-radius: 24px;
-    color: #0A3871;
-    margin-left: 98px;
-    margin-top: 20px;
-    padding-left: 20px;
-    position: fixed;
-} */
 .mensagem {
-    background: white;
+    background: var(--cor-botao);
     background-image: url(/img/boneco.png);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     border: none;
     border-radius: 24px;
-    color: #0A3871;
+    color: var(--cor-texto);
     margin-left: 98px;
     margin-top: 20px;
-    padding-left: 20px;
-    position: fixed;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo em uma coluna */
+    justify-content: space-between; /* Distribui espaço entre o conteúdo e o botão */
+    position: relative;
+    height: auto; /* Deixe o tamanho ser definido pelo conteúdo */
 }
 
 .mensagem.com-texto {
@@ -72,10 +82,10 @@ main {
 }
 
 .btn-desencriptar {
-    background: #D8DFE8;
-    border: 1px solid #0A3871;
+    background: var(--cor-secundaria);
+    border: 1px solid var(--cor-texto);
     border-radius: 24px;
-    color: #0A3871;
+    color: var(--cor-texto);
     cursor: pointer;
     height: 67px;
     margin-left: 30px;
@@ -83,42 +93,61 @@ main {
 }
 
 .btn-encriptar {
-    background-color: #0A3871;
-    border: 1px solid #0A3871;
+    background-color: var(--cor-texto);
+    border: 1px solid var(--cor-texto);
     border-radius: 24px;
-    color: white;
+    color: var(--cor-botao);
     cursor: pointer;
     height: 67px;
     width: 328px;
 }
 
 .btn-copiar {
-    border: 1px solid #0A3871;
+    border: 1px solid var(--cor-texto);
     border-radius: 24px;
-    color: #0A3871;
+    color: var(--cor-texto);
     cursor: pointer;
-    height: 67px;
-    margin-left: 180px;
-    margin-top: 402px;
-    position: absolute;
-    width: 336px;
+    padding: 10px;
+    background-color: var(--cor-secundaria);
+    align-self: flex-end; /* Alinha o botão à direita dentro da caixa */
+    margin-top: 10px; /* Espaçamento superior para separar do conteúdo */
+    width: 50%; /* Largura relativa para se ajustar ao tamanho da caixa */
+    max-width: 200px; /* Largura máxima para não exceder */
+    min-width: 150px; /* Define uma largura mínima */
 }
+
 .oculto {
     display: none;
 }
-
 
 .informs {
     color: #495057;
     font-size: 18px;
 }
 
-.rodape{
+.rodape {
     padding: 24px;
-    color:var(--cor-primaria)0;
-    background-color: var(--cor-terciaria);
+    color: var(--cor-texto);
+    background-color: var(--cor-secundaria);
     text-align: center;
-    font-family: var(--font-secundaria);
+    font-family: var(--fonte-principal);
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    main {
+        margin-left: 0;
+    }
+
+    .text-area,
+    .mensagem {
+        width: 100%;
+    }
+
+    .btn-copiar {
+        margin-left: 0;
+        width: 100%;
+    }
 }
