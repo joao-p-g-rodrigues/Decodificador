@@ -33,6 +33,18 @@ main {
     outline: none;
 }
 
+/* .mensagem {
+    background: white;
+    background-image: url(/img/boneco.png);
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 24px;
+    color: #0A3871;
+    margin-left: 98px;
+    margin-top: 20px;
+    padding-left: 20px;
+    position: fixed;
+} */
 .mensagem {
     background: white;
     background-image: url(/img/boneco.png);
@@ -44,6 +56,10 @@ main {
     margin-top: 20px;
     padding-left: 20px;
     position: fixed;
+}
+
+.mensagem.com-texto {
+    background-image: none; /* Remove a imagem quando há texto */
 }
 
 .mensagem:focus {
@@ -87,6 +103,10 @@ main {
     position: absolute;
     width: 336px;
 }
+.oculto {
+    display: none;
+}
+
 
 .informs {
     color: #495057;
